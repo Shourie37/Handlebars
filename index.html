@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+	<head>
+	
+
+	
+	
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+		<script src="handlebars-v4.0.5.js"></script>
+		   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+				<style>
+					body {
+		    			font:15px arial,sans-serif;
+						 }
+					h1 {
+		    			margin: 0 0 10px 0;
+		    			padding: 5px;
+		    			font-size: 24px;
+		    			background-color: #999;
+		   				 color: #fff;
+						}
+					table {
+		    			margin: 10px;
+						  }
+					th, td {
+		    			padding: 5px;
+		   				border: 1px solid #999;
+						   }
+					th {
+		    			background: #ccc;
+					    }
+					tr:nth-child(odd) {
+		    			background: #eee;
+									  }
+					td a {
+		    			color: #000;
+		    			text-decoration: underline;
+						}s
+			</style>
+	</head>
+		<body>
+						
+			 <div id="studentData"></div>
+				<button type="button" id="next">next
+				</button>
+				<button type="button" id="previous">previous
+				</button>
+					<script id="some-template" type="text/x-handlebars-template">
+
+					{{#eachone studentinfo}}
+					<div class="card">
+								  <div class="card-block">
+									    <h4 class="card-title" align="center">{{name}}</h4>
+									    <h6 class="card-subtitle text-muted" align="center">Age:{{age}}</h6>
+								  </div>
+										  <!--<img src="..." alt="Card image">-->
+										  
+					
+								<table class="table table-bordered" align="center">
+								  <thead>
+								    <tr>
+								      <th>#</th>
+								      <th>Subject</th>
+								      <th>Marks</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <th scope="row">1</th>
+								      <td>Maths</td>
+								      <td>{{marks/maths}}</td>
+								    </tr>
+								    <tr>
+								      <th scope="row">2</th>
+								      <td>science</td>
+								      <td>{{marks/science}}</td>
+								    </tr>
+								    <tr>
+								      <th scope="row">3</th>
+								      <td>social</td>
+								      <td>{{marks/social}}</td>
+								      <td></td>
+								    </tr>
+								  </tbody>
+								</table>
+					</div>
+
+								{{/eachone}}
+
+
+					</script>
+				
+				<script type="text/javascript">
+				$(document).ready(function(){
+									var i=0;
+									var j;
+
+									var info=document.getElementById("some-template").innerHTML;
+									var template=Handlebars.compile(info);
+									
+									Handlebars.registerHelper('eachone', function(context, options) {
+												  var ret = "";
+												  j=context.length;
+												    ret = ret + options.fn(context[i]);
+
+												  return ret;
+									               });
+
+									var studentData=template({ 
+										studentinfo:[{ name:"goku", age:"18", marks:{maths:"40",science:"60",social:"70"}},
+										{ name:"gohan", age:"20", marks:{ maths:"30",science:"70",social:"80"}},
+										{ name:"bob", age:"19", marks:{maths:"50",science:"70",social:"90"}},
+										{ name:"asam", age:"17", marks:{maths:40,science:60,social:"70"}},
+										{ name:"invi", age:"19", marks:{maths:50,science:80,social:90}}]
+								    });
+								
+									document.getElementById("studentData").innerHTML=studentData;
+								     $('#next').click(function(){
+								     	if(i<j-1)
+								     	{
+								     		i++;
+									
+
+												var info=document.getElementById("some-template").innerHTML;
+												var template=Handlebars.compile(info);
+												
+												Handlebars.registerHelper('eachone', function(context, options) {
+															  var ret = "";
+															  
+															    ret = ret + options.fn(context[i]);
+															    
+
+															  return ret;
+												               });
+
+												var studentData=template({ 
+													studentinfo:[{ name:"goku", age:"18", marks:{maths:"40",science:"60",social:"70"}},
+													{ name:"gohan", age:"20", marks:{ maths:"30",science:"70",social:"80"}},
+													{ name:"bob", age:"19", marks:{maths:"50",science:"70",social:"90"}},
+													{ name:"asam", age:"17", marks:{maths:40,science:60,social:"70"}},
+													{ name:"invi", age:"19", marks:{maths:50,science:80,social:90}}]
+											    });
+											    
+																
+																//eachone(context,options);
+																
+
+								
+
+									
+										
+
+									
+											document.getElementById("studentData").innerHTML=studentData;
+									   }
+									     });
+								   
+
+										     $('#previous').click(function(){
+										     	if(i>0)
+										{
+											i--;
+
+											var info=document.getElementById("some-template").innerHTML;
+											var template=Handlebars.compile(info);
+											
+											Handlebars.registerHelper('eachone', function(context, options) {
+														  var ret = "";
+														    ret = ret + options.fn(context[i]);
+
+														  return ret;
+											               });
+
+											var studentData=template({ 
+												studentinfo:[{ name:"goku", age:"18", marks:{maths:"40",science:"60",social:"70"}},
+												{ name:"gohan", age:"20", marks:{ maths:"30",science:"70",social:"80"}},
+												{ name:"bob", age:"19", marks:{maths:"50",science:"70",social:"90"}},
+												{ name:"asam", age:"17", marks:{maths:40,science:60,social:"70"}},
+												{ name:"invi", age:"19", marks:{maths:50,science:80,social:90}}]
+										    });
+										    
+															//eachone(context,options);
+															
+
+								
+
+									
+										
+
+									
+											document.getElementById("studentData").innerHTML=studentData;
+										}
+										     });
+								
+				});
+				</script>
+
+
+		</body>
+</html>
+
+
+
+
+						
+
+
+
+
+
+					
+
+
+				
+								
+				

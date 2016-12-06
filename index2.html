@@ -1,0 +1,28 @@
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['index.html'] = template({"1":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return " -->\r\n	<script id=\"some-template\" type=\"text/x-handlebars-template\">\r\n			<!-- <div class=\"container\">\r\n		    <tr><td>"
+    + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
+    + "</td><td>"
+    + alias4(((helper = (helper = helpers.age || (depth0 != null ? depth0.age : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"age","hash":{},"data":data}) : helper)))
+    + "</td></tr>\r\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "	    		<tr><td>"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "</td><td>"
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</td></tr>\r\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=depth0 != null ? depth0 : {};
+
+  return "<!DOCTYPE html>\r\n<head>\r\n	\r\n\r\n	\r\n	\r\n	\r\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\r\n\r\n<!-- Optional theme -->\r\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\" integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">\r\n\r\n<!-- Latest compiled and minified JavaScript -->\r\n <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\r\n<!--<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>	-->\r\n<script src=\"handlebars-v4.0.5.js\"></script>\r\n<script src=\"handlebars.runtime-v4.05\"></script>\r\n   \r\n   <script src=\"http://code.jquery.com/ui/1.9.2/jquery-ui.js\"></script>\r\n\r\n\r\n		<style>\r\n			body {\r\n    			font:15px arial,sans-serif;\r\n				 }\r\n			h1 {\r\n    			margin: 0 0 10px 0;\r\n    			padding: 5px;\r\n    			font-size: 24px;\r\n    			background-color: #999;\r\n   				 color: #fff;\r\n				}\r\n			table {\r\n    			margin: 10px;\r\n				  }\r\n			th, td {\r\n    			padding: 5px;\r\n   				border: 1px solid #999;\r\n				   }\r\n			th {\r\n    			background: #ccc;\r\n			    }\r\n			tr:nth-child(odd) {\r\n    			background: #eee;\r\n							  }\r\n			td a {\r\n    			color: #000;\r\n    			text-decoration: underline;\r\n				}s\r\n	</style>\r\n</head>\r\n\r\n\r\n<body>\r\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js\"></script>\r\n   		<script type=\"text/javascript\">(function($) {\r\n 		$(function() {\r\n\r\n        $('.update').live('change', function() {\r\n            formObject.run($(this));\r\n        });\r\n    	});\r\n		})(jQuery);\r\n		</script>\r\n			<script src=\"main.js\">\r\n			</script>\r\n\r\n <div id=\"ent\"></div>\r\n<button type=\"button\" id=\"next\">next</button>\r\n<button type=\"button\">previous</button>\r\n \r\n	<!-- <table>\r\n		"
+    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.people : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "	</table> -->\r\n	<div id=\"comments\">\r\n		<table>\r\n"
+    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.comments : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "		</table>\r\n	</div>\r\n	</script>\r\n	\r\n					\r\n				\r\n\r\n</body>\r\n</html>";
+},"useData":true});
+})();
